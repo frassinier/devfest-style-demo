@@ -1,0 +1,23 @@
+$my-bubble-arrow-height: 1.5rem !default;
+$my-bubble-arrow-width: 2rem !default;
+
+.is-bubble {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 100%;
+		bottom: 1rem;
+		border: 0 solid transparent;
+		border: {
+			top: {
+				width: $my-bubble-arrow-height;
+			}
+			left: {
+				width: $my-bubble-arrow-width;
+				color: white;
+			}
+		}
+	}
+}

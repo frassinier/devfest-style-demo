@@ -1,7 +1,7 @@
 {
-  "name": "devfest-demo",
+  "name": "devfest-style-demo",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:frassinier/devfest-style-demo.git",
   "author": "frassinier <frassinier@talend.com>",
   "license": "MIT",
@@ -14,6 +14,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "bulma": "^0.5.1",
+    "copy-webpack-plugin": "^4.1.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",

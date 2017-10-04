@@ -1,11 +1,13 @@
 const path = require('path');
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DIST_PATH = path.resolve(__dirname, 'dist');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: path.resolve(__dirname, 'src/scripts/index.js'),
 	output: {
 		filename: 'bundle.js',
 		path: DIST_PATH,
@@ -14,11 +16,12 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				include: /src/,
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['env'],
+						presets: [
+							'env',
+						],
 					}
 				}
 			},
@@ -26,15 +29,24 @@ module.exports = {
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: ['css-loader', 'sass-loader'],
+					use: [
+						'css-loader',
+						'sass-loader'
+					],
 				})
 			}
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin("bundle.css"),
+		new CopyWebpackPlugin([
+			{
+				from: path.resolve(__dirname, 'src/images'),
+				to: 'images',
+			},
+		]),
+		new ExtractTextPlugin('bundle.css'),
 		new HtmlWebpackPlugin({
-			template: './src/index.html',
+			template: path.resolve(__dirname, 'src/index.html'),
 		}),
 	],
 	devServer: {

@@ -1,0 +1,12 @@
+// Theme
+@import '~bulma';
+// Objects
+@import 'box';
+
+// App
+#myApp {
+	.hero {
+		background-size: cover;
+		background: no-repeat center;
+	}
+}
