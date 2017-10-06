@@ -13,9 +13,5 @@ $family-sans-serif: 'Sedgwick Ave', cursive;
 /// Very specific stuff here
 /// @group app
 #myApp {
-	.hero {
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
+	@import 'hero'; // App related hero section style
 }
