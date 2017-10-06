@@ -32,7 +32,7 @@ osBrowserMatrix.forEach(os => {
 			os_version: os.version,
 			browserName,
 			browser_version: browserVersion,
-			resolution: '1024x768',
+			resolution: '1366x768',
 			'browserstack.user': process.env.BROWSERSTACK_USER,
 			'browserstack.key': process.env.BROWSERSTACK_KEY,
 		};
@@ -52,7 +52,7 @@ osBrowserMatrix.forEach(os => {
 
 		driver.setFileDetector(new remote.FileDetector());
 
-		const folderName = `screenshots/${os.name}_${os.version}-${browser}`.split(' ').join('_');
+		const folderName = `${os.name}_${os.version}-${browser}`.split(' ').join('_');
 		mkdirp(folderName, (err) => {
 			// path exists unless there was an error
 			if (err) throw err;
