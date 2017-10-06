@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "SURGE"
 cd "$TRAVIS_BUILD_DIR"
 if [ "$TRAVIS_PULL_REQUEST" == 'false' ] && [ "$TRAVIS_BRANCH" == 'master' ]; then
