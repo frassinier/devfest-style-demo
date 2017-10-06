@@ -1,4 +1,4 @@
-echo "TEST"
+echo "BROWSERSTACK"
 cd "$TRAVIS_BUILD_DIR"
 if [ "$TRAVIS_PULL_REQUEST" != 'false' ]; then
     yarn run test:browserstack

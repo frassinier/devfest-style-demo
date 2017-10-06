@@ -52,7 +52,7 @@ osBrowserMatrix.forEach(os => {
 
 		driver.setFileDetector(new remote.FileDetector());
 
-		const folderName = `${os.name}_${os.version}-${browser}`.split(' ').join('_');
+		const folderName = `screenshots/${os.name}_${os.version}-${browser}`.split(' ').join('_');
 		mkdirp(folderName, (err) => {
 			// path exists unless there was an error
 			if (err) throw err;
