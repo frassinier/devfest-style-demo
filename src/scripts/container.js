@@ -4,13 +4,13 @@ import PureComponent from './component';
  * Data
  * @type {[string,string,string,string,string,string,string,string]} Messages
  */
-export const messages = [
+export const MESSAGES = [
 	'Vous êtes des gens vraiment super à',
 	'Je serai toujours là pour veiller sur',
 	'Je me suis mangé la Tour de Bretagne en survolant',
-	'Préparez-vous! Une grosse baaille va arriver à',
+	'Préparez-vous! Une grosse bataille va arriver à',
 	'Je n\'ai jamais vu des gens aussi cool que vous',
-	'Je connais le chef de la police de ',
+	'Je connais le chef de la police de',
 	'La chasse aux vilains est ouverte à',
 	'Vous pouvez compter sur moi',
 ];
@@ -19,11 +19,11 @@ export const messages = [
  * Get random hero data
  * @returns {{image: string, message: string}} image path and message
  */
-function getRandomHeroData() {
-	const randomValue = Math.floor(Math.random() * messages.length);
+function _getRandomHeroData() {
+	const randomValue = Math.floor(Math.random() * MESSAGES.length);
 	return {
 		image: `/images/hero${randomValue + 1}.jpg`,
-		message: messages[randomValue],
+		message: MESSAGES[randomValue],
 	};
 }
 
@@ -37,7 +37,7 @@ export default function connectedComponent(city = 'Nantes') {
 	const {
 		image,
 		message,
-	} = getRandomHeroData();
+	} = _getRandomHeroData();
 
 	// render component
 	return PureComponent({

@@ -1,12 +1,21 @@
-// Theme
-@import '~bulma';
-// Objects
-@import 'box';
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave');
 
-// App
+/// Only global style here
+/// @group theme
+$family-sans-serif: 'Sedgwick Ave', cursive;
+@import '~bulma';
+
+/// Specific stuff concerning for components
+/// @group components
+@import 'box'; // Abstract components (aka Elements or Objects)
+@import 'box.bubble'; // Real component example
+
+/// Very specific stuff here
+/// @group app
 #myApp {
 	.hero {
 		background-size: cover;
-		background: no-repeat center;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 }

@@ -6,9 +6,9 @@
  * @returns {Element} Hero section as pure component
  */
 export default function pureComponent({ city, image, message }) {
-	// span.title.is-unselectable.is-size-1.has-text-grey to say something
+	// span.title.is-unselectable.is-size-1.has-text-grey-darker to say something
 	const spanElement = document.createElement('span');
-	spanElement.className = 'title is-unselectable is-size-1 has-text-grey';
+	spanElement.className = 'title is-unselectable is-size-1 has-text-grey-darker';
 	spanElement.innerText = `${message} ${city}!`;
 
 	// div.box.is-bubble
