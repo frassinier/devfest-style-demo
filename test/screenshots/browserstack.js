@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const mkdirp = require('mkdirp');
 const webdriver = require('selenium-webdriver');
 const remote = require('selenium-webdriver/remote');
@@ -32,7 +33,7 @@ osBrowserMatrix.forEach(os => {
 			os_version: os.version,
 			browserName,
 			browser_version: browserVersion,
-			resolution: '1366x768',
+			resolution: '1024x768',
 			'browserstack.user': process.env.BROWSERSTACK_USER,
 			'browserstack.key': process.env.BROWSERSTACK_KEY,
 		};
@@ -53,7 +54,7 @@ osBrowserMatrix.forEach(os => {
 		driver.setFileDetector(new remote.FileDetector());
 
 		const folderName = `${os.name}_${os.version}-${browser}`.split(' ').join('_');
-		mkdirp(folderName, (err) => {
+		mkdirp(path.resolve(__dirname, folderName), (err) => {
 			// path exists unless there was an error
 			if (err) throw err;
 		});
@@ -62,7 +63,9 @@ osBrowserMatrix.forEach(os => {
 		console.log(`Generate screenshot for ${group}`);
 		const pullRequestNumber = process.env.TRAVIS_PULL_REQUEST;
 		driver.get(`http://${pullRequestNumber}.devfest-style-demo.surge.sh/guidelines.html`);
-		driver.saveScreenshot(`${folderName}/guidelines.png`);
+		const screenshotPath = path.resolve(__dirname, `${folderName}/guidelines.png`);
+		console.log('Saving image to ' + screenshotPath);
+		driver.saveScreenshot(screenshotPath);
 
 		driver.quit();
 	});
