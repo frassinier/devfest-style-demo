@@ -43,6 +43,9 @@ module.exports = {
 				from: path.resolve(__dirname, 'src/images'),
 				to: 'images',
 			},
+			{
+				from: path.resolve(__dirname, 'test/guidelines.html'),
+			},
 		]),
 		new ExtractTextPlugin('bundle.css'),
 		new HtmlWebpackPlugin({
