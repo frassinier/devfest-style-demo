@@ -10,6 +10,8 @@ if [ -n "$GH_TOKEN" ]; then
 		git checkout $TRAVIS_PULL_REQUEST_BRANCH
 		echo "✓ Checkout $TRAVIS_PULL_REQUEST_BRANCH"
 		git add test/screenshots
+        echo "git status"
+		git status
 		git -c user.name="travis" -c user.email="travis" commit -m "CI - update screenshots"
 		echo "✓ Commit updated screenshots to $TRAVIS_PULL_REQUEST_BRANCH"
 
