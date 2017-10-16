@@ -9,7 +9,7 @@ export default function pureComponent({ city, image, message }) {
 	// span.title.is-unselectable.is-size-1.has-text-grey-darker to say something
 	const spanElement = document.createElement('span');
 	spanElement.className = 'title is-unselectable is-size-1 has-text-grey-darker';
-	spanElement.innerText = `${message} ${city}!`;
+	spanElement.innerText = `${message} ${city} !`;
 
 	// div.box.is-bubble
 	const divElement = document.createElement('div');
