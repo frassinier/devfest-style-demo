@@ -7,8 +7,8 @@ import PureComponent from './component';
 export const MESSAGES = [
 	'Vous êtes des gens vraiment super à',
 	'Je serai toujours là pour veiller sur',
-	'Je me suis mangé la Tour de Bretagne en survolant',
-	'Préparez-vous! Une grosse bataille va arriver à',
+	'Je me suis mangé la tour Bretagne en survolant',
+	'Préparez-vous ! Une grosse bataille va arriver à',
 	'Je n\'ai jamais vu des gens aussi cool que vous',
 	'Je connais le chef de la police de',
 	'La chasse aux vilains est ouverte à',
